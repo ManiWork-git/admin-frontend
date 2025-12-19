@@ -126,6 +126,7 @@ async function deleteUser(id) {
       throw new Error("Oops!" + res.status);
     }
     alert("Successfully Deleted");
+    getUsers();
   } catch (error) {
     console.log(error.message);
   }
