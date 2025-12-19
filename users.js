@@ -14,6 +14,7 @@ getUsers();
 
 function showUsers(data) {
   const container = document.querySelector(".container");
+  container.innerHTML = "";
 
   data.forEach((user) => {
     let div = document.createElement("div");

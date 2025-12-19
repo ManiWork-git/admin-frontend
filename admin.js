@@ -95,9 +95,18 @@ saveBtn.addEventListener("click", async () => {
     ? `https://admin-backend-k02k.onrender.com/users/${userId}`
     : `https://admin-backend-k02k.onrender.com/users`;
 
-  let res = await fetch(URL, options);
-  if (!res.ok) throw new Error("Failed to update or create " + res.status);
-  alert("Successfull!");
+  try {
+    const res = await fetch(URL, options);
+    if (!res.ok) throw new Error("Failed to update or create " + res.status);
+
+    alert("Success!");
+    document.getElementById("username").value = "";
+    document.getElementById("imgLink").value = "";
+    document.getElementById("userId").value = "";
+    getUsers();
+  } catch (err) {
+    console.error(err.message);
+  }
 });
 
 // delete user
@@ -107,7 +116,7 @@ async function deleteUser(id) {
     //   method: "DELETE",
     // });
     let res = await fetch(
-      `https://admin-backend-k02k.onrender.com/users/${userId}`,
+      `https://admin-backend-k02k.onrender.com/users/${id}`,
       {
         method: "DELETE",
       }
