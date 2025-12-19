@@ -82,8 +82,8 @@ saveBtn.addEventListener("click", async () => {
       "content-type": "application/json",
     },
     body: JSON.stringify({
-      name,
-      imageLink,
+      name: name,
+      imgLink: imageLink,
     }),
   };
 
@@ -136,7 +136,6 @@ document.getElementById("goUsers").addEventListener("click", () => {
   window.location.href = "users.html";
 });
 
-// db.json
 // {
 //   "users": [
 //     {
@@ -146,13 +145,34 @@ document.getElementById("goUsers").addEventListener("click", () => {
 //     },
 //     {
 //       "id": "2",
-//       "name": "Optimus Prime",
-//       "imgLink": "https://i.pinimg.com/236x/82/80/f3/8280f33e556ee749a5f62c9d835c81a9.jpg"
+//       "name": "Thors",
+//       "imgLink": "https://pbs.twimg.com/media/GxTP0M8XYAAxW3A.jpg"
 //     },
 //     {
 //       "id": "3",
 //       "name": "Erwin Smith",
 //       "imgLink": "https://i.pinimg.com/736x/b9/b4/50/b9b450f4bf437e655c5e4e42d89dfe29.jpg"
+//     },
+//     {
+//       "id": "4",
+//       "name": "Isaac Netero",
+//       "imgLink": "https://wallpapers.com/images/hd/isaac-netero-1240-x-1613-wallpaper-nins3dvyx4d5rnlw.jpg"
+//     },
+//     {
+//       "id": "5",
+//       "name": "Optimus Prime",
+//       "imgLink": "https://i.pinimg.com/236x/82/80/f3/8280f33e556ee749a5f62c9d835c81a9.jpg"
+//     },
+//     {
+//       "id": "6",
+//       "name": "Rengoku Kyojuro",
+//       "imgLink": "https://i.pinimg.com/videos/thumbnails/originals/45/ec/a3/45eca382f7d57ccd049b0e8c1fd4273d.0000000.jpg"
+//     },
+//     {
+//       "id": "ecf6",
+//       "name": "Mani",
+//       "imgLink": "https://64.media.tumblr.com/558e983dba839ef8e46a55fb9b3b5f8c/527df9cf5a7ceed5-af/s512x512u_c1/7d24418688743170c0884c5c021587de49d1a66a.pnj",
+//       "imageLink": "https://64.media.tumblr.com/558e983dba839ef8e46a55fb9b3b5f8c/527df9cf5a7ceed5-af/s512x512u_c1/7d24418688743170c0884c5c021587de49d1a66a.pnj"
 //     }
 //   ]
 // }
