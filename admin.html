@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Portal</title>
+    <link rel="stylesheet" href="admin.css" />
+  </head>
+  <body>
+    <header class="admin-header">
+      <h1>Admin Portal</h1>
+    </header>
+
+    <div class="container1">
+      <input type="hidden" id="userId" />
+      <strong> <label for="username">Name :</label></strong>
+      <input type="text" name="username" id="username" />
+      <strong><label for="imgLink">Image Link :</label></strong>
+      <input type="text" name="imgLink" id="imgLink" />
+      <button id="saveBtn">Save Info</button>
+      <button id="goUsers" class="user-page-btn">User Page</button>
+    </div>
+    <div id="container2"></div>
+
+    <script src="admin.js"></script>
+  </body>
+</html>

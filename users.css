@@ -1,0 +1,288 @@
+/* -------------------- RESET -------------------- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* -------------------- VARS -------------------- */
+:root {
+  --left-width: 280px;
+
+  --bg-dark-1: #0f172a;
+  --bg-dark-2: #020617;
+
+  --card-1: #1e293b;
+  --card-2: #0f172a;
+}
+
+/* -------------------- BODY -------------------- */
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--bg-dark-1), var(--bg-dark-2));
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  overflow-x: hidden;
+  color: #ffffff;
+}
+
+/* -------------------- HEADING CONTAINER -------------------- */
+.heading {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: var(--left-width);
+  height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
+
+  padding-block: 28px;
+  pointer-events: none;
+  z-index: 20;
+}
+
+/* -------------------- VERTICAL TEXT-ONLY HEADING -------------------- */
+.vert-col {
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: clamp(40px, 5.8vw, 78px);
+  line-height: 1;
+  white-space: nowrap;
+
+  padding: 8px 0;
+  max-height: calc(100vh - 80px);
+
+  /* PURE WHITE TEXT */
+  color: #8ab1df; /* soft slate-blue */
+
+  /* SAME GLOW — slightly tuned for blue */
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.75), 0 8px 26px rgba(59, 130, 246, 0.55),
+    0 18px 40px rgba(0, 0, 0, 0.65);
+  letter-spacing: 0.08em;
+
+  position: relative;
+}
+
+/* Slight hover lift (desktop only) */
+@media (hover: hover) {
+  .vert-col:hover {
+    transform: translateY(-6px);
+    transition: transform 0.25s ease;
+  }
+}
+
+/* -------------------- USERS CONTAINER -------------------- */
+.container {
+  margin-left: var(--left-width);
+  min-height: 100vh;
+  padding: 60px 80px;
+
+  display: grid;
+  grid-template-columns: repeat(2, minmax(320px, 1fr));
+  gap: 36px;
+
+  overflow-y: auto;
+}
+
+/* -------------------- USER CARD -------------------- */
+.container > div {
+  height: 380px;
+  padding: 24px;
+
+  background: linear-gradient(145deg, var(--card-1), var(--card-2));
+  border-radius: 26px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.55),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.03);
+
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.container > div:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.7),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.06);
+}
+
+/* -------------------- IMAGE -------------------- */
+.image-container {
+  width: 230px;
+  height: 230px;
+  border-radius: 20px;
+  overflow: hidden;
+
+  background-color: #020617;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.55);
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  display: block;
+}
+
+/* -------------------- CAPTION -------------------- */
+p {
+  margin-top: 12px;
+  font-size: 1.1rem;
+  color: #e5e7eb;
+  letter-spacing: 0.4px;
+  text-align: center;
+}
+
+p strong {
+  color: #ffffff;
+  text-shadow: 0 0 6px rgba(255, 255, 255, 0.4);
+  font-weight: 600;
+}
+
+/* -------------------- RESPONSIVE -------------------- */
+@media (max-width: 1100px) {
+  :root {
+    --left-width: 180px;
+  }
+
+  .heading {
+    position: static;
+    width: 100%;
+    height: auto;
+
+    display: flex;
+    gap: 12px;
+    padding: 18px 20px;
+  }
+
+  .vert-col {
+    writing-mode: horizontal-tb;
+    text-orientation: initial;
+
+    font-size: 1.8rem;
+    letter-spacing: 0.12em;
+    padding: 0;
+    max-height: none;
+  }
+
+  .container {
+    margin-left: 0;
+    grid-template-columns: 1fr;
+    padding: 20px;
+    height: auto;
+  }
+
+  .container > div {
+    height: auto;
+    padding: 18px;
+  }
+
+  .image-container {
+    width: 100%;
+    height: 260px;
+  }
+}
+
+/*////////////////////////////////////////////////////////////*/
+
+/* * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1f2933, #111827);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+.heading {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  margin-top: 40px;
+  margin-bottom: 20px;
+
+  background: linear-gradient(90deg, #60a5fa, #38bdf8, #22d3ee);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  text-shadow: 0 8px 30px rgba(96, 165, 250, 0.25);
+}
+.heading::after {
+  content: "";
+  display: block;
+  width: 120px;
+  height: 4px;
+  margin: 14px auto 0;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #60a5fa, #22d3ee);
+  opacity: 0.8;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  padding: 60px 120px;
+}
+
+.container > div {
+  background: linear-gradient(145deg, #2b3642, #1f2933);
+  border-radius: 24px;
+  padding: 24px;
+  height: 360px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.container > div:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.55);
+}
+
+.image-container {
+  width: 220px;
+  height: 220px;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  background-color: #111827;
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  display: block;
+}
+
+p {
+  color: #e5e7eb;
+  font-size: 1.1rem;
+  letter-spacing: 0.4px;
+}
+
+p strong {
+  color: #60a5fa;
+  font-weight: 600;
+} */
